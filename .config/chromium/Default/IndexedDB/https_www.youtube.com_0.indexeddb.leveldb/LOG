@@ -1,0 +1,6 @@
+2024/04/20-08:25:22.560 25d7 Reusing MANIFEST /home/srp/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/20-08:25:22.561 25d7 Recovering log #3
+2024/04/20-08:25:22.584 25d7 Reusing old log /home/srp/.config/chromium/Default/IndexedDB/https_www.youtube.com_0.indexeddb.leveldb/000003.log 
+2024/04/20-08:25:25.496 25d8 Level-0 table #5: started
+2024/04/20-08:25:25.514 25d8 Level-0 table #5: 1407920 bytes OK
+2024/04/20-08:25:25.516 25d8 Delete type=0 #3

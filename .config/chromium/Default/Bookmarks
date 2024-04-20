@@ -1,0 +1,47 @@
+{
+   "checksum": "a3f1b142730637aac3782a3e3fdcbb51",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13357917172294633",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13357917669332626",
+            "date_last_used": "0",
+            "guid": "88c1b915-6a11-4db3-881a-ff56a3d8e795",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "GitHub - end-4/dots-hyprland: Modern, feature-rich and accessible desktop configuration.",
+            "type": "url",
+            "url": "https://github.com/end-4/dots-hyprland"
+         } ],
+         "date_added": "13357917172294635",
+         "date_last_used": "0",
+         "date_modified": "13357917669332626",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13357917172294636",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

@@ -1,0 +1,6 @@
+2024/04/19-09:01:34.690 ebd Creating DB /home/srp/.config/chromium/Default/IndexedDB/https_unix.stackexchange.com_0.indexeddb.leveldb since it was missing.
+2024/04/19-09:01:34.692 ebd Reusing MANIFEST /home/srp/.config/chromium/Default/IndexedDB/https_unix.stackexchange.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/19-09:01:48.387 ebe Level-0 table #5: started
+2024/04/19-09:01:48.389 ebe Level-0 table #5: 395 bytes OK
+2024/04/19-09:01:48.392 ebe Delete type=0 #3
+2024/04/19-09:01:48.392 ebe Manual compaction at level-0 from (begin) .. (end); will stop at (end)
