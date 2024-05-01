@@ -1,15 +1,3 @@
-2024/04/20-08:17:27.273 4 Reusing MANIFEST /home/srp/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2024/04/20-08:17:27.280 4 Recovering log #86
-2024/04/20-08:17:27.281 4 Reusing old log /home/srp/.config/chromium/Default/Local Storage/leveldb/000086.log 
-2024/04/20-08:25:00.218 6 Level-0 table #89: started
-2024/04/20-08:25:00.223 6 Level-0 table #89: 198602 bytes OK
-2024/04/20-08:25:00.226 6 Delete type=0 #86
-2024/04/20-08:25:00.226 6 Compacting 4@0 + 1@1 files
-2024/04/20-08:25:00.240 6 Generated table #90@0: 988 keys, 491307 bytes
-2024/04/20-08:25:00.240 6 Compacted 4@0 + 1@1 files => 491307 bytes
-2024/04/20-08:25:00.242 6 compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/04/20-08:25:00.243 6 Delete type=2 #79
-2024/04/20-08:25:00.243 6 Delete type=2 #81
-2024/04/20-08:25:00.243 6 Delete type=2 #83
-2024/04/20-08:25:00.243 6 Delete type=2 #85
-2024/04/20-08:25:00.243 6 Delete type=2 #89
+2024/04/24-07:57:08.142 4 Reusing MANIFEST /home/srp/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
+2024/04/24-07:57:08.149 4 Recovering log #148
+2024/04/24-07:57:08.149 4 Reusing old log /home/srp/.config/chromium/Default/Local Storage/leveldb/000148.log 

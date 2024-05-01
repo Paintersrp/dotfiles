@@ -1,9 +1,9 @@
-sw_volume: 21
+sw_volume: 40
 audio_device_state:1:pulse audio
 audio_device_state:1:my_fifo
-state: pause
-current: 1
-time: 13.892000
+state: play
+current: 145
+time: 110.500000
 random: 0
 repeat: 0
 single: 0
@@ -12,11 +12,157 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/4. TERROR PACKETS (1).flac
-1:Denzel Curry X Kenny Beats/Unlocked/2. Take_it_Back_v2 (1).mp3
-2:Denzel Curry X Kenny Beats/Unlocked/3. Lay_Up.m4a (1).mp3
-3:Denzel Curry X Kenny Beats/Unlocked/4. Pyro (leak 2019) (1).mp3
-4:Denzel Curry X Kenny Beats/Unlocked/5. DIET_ (1).mp3
-5:Denzel Curry X Kenny Beats/Unlocked/6. So.Incredible.pkg (1).mp3
-6:Denzel Curry X Kenny Beats/Unlocked/8. ꞌCosmicꞌ.m4a (1).mp3
+0:Denzel Curry X Kenny Beats/Unlocked/3. Lay_Up.m4a (1).mp3
+1:Kendrick Lamar/good Kid, m.A.A.d city/5. Money Trees (1).flac
+2:Tech N9ne/All 6's and 7's/4. Am I a Psycho_ (1).mp3
+3:Kendrick Lamar/good Kid, m.A.A.d city/2. Black Boy Fly (1).flac
+4:Baby Keem/The Melodic Blue/1. trademark usa (1).flac
+5:Baby Keem/The Melodic Blue/9. cocoa (1).flac
+6:Kendrick Lamar/DAMN_/9. LUST. (1).flac
+7:Danny Brown/Atrocity Exhibition/1. Downward Spiral (1).flac
+8:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/7. SONG OF SINNERS (1).flac
+9:JID/The Forever Story/10. Can’t Make U Change.flac
+10:JID/The Forever Story/1. Galaxy.flac
+11:Vince Staples/Big Fish Theory/2. Big Fish.flac
+12:Vince Staples/Summertime ’06/2. Lift Me Up (1).flac
+13:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/8. 666 IN LUXAXA (1).flac
+14:Run the Jewels/Run the Jewels/3. 36″ Chain (1).mp3
+15:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/9. NINE HELLS (1).flac
+16:Kendrick Lamar/To Pimp a Butterfly/8. For Sale_ (interlude) (1).flac
+17:Run the Jewels/Run the Jewels 2/6. Lie, Cheat, Steal (1).mp3
+18:Danny Brown/Atrocity Exhibition/6. Ain't It Funny (1).flac
+19:Kendrick Lamar/To Pimp a Butterfly/9. Momma (1).flac
+20:J.I.D/DiCaprio 2/5. 151 Rum (1).flac
+21:Kendrick Lamar/good Kid, m.A.A.d city/3. Backseat Freestyle (1).flac
+22:Vince Staples/Summertime ’06/3. Norf Norf (1).flac
+23:JID/The Forever Story/6. Surround Sound.flac
+24:Danny Brown/Atrocity Exhibition/14. Get Hi (1).flac
+25:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/9. Method Man.mp3
+26:Baby Keem/The Melodic Blue/14. first order of business (1).flac
+27:Baby Keem/The Melodic Blue/4. range brothers (1).flac
+28:Kendrick Lamar/DAMN_/1. BLOOD. (1).flac
+29:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/6. BLOOD IN THE WATER (1).flac
+30:Armand Hammer - 2023 - We Buy Diabetic Test Strips (Fat Possum Records) [FLAC]/01 - Landlines.flac
+31:Baby Keem/The Melodic Blue/10. family ties (1).flac
+32:Kendrick Lamar/To Pimp a Butterfly/13. The Blacker the Berry (1).flac
+33:Baby Keem/The Melodic Blue/6. gorgeous (1).flac
+34:Denzel Curry X Kenny Beats/Unlocked/5. DIET_ (1).mp3
+35:Baby Keem/The Melodic Blue/3. scapegoats (1).flac
+36:Tech N9ne/Something Else/8. Fragile (1).mp3
+37:Kendrick Lamar/good Kid, m.A.A.d city/7. good kid (1).flac
+38:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/5. IN THY HOLY NAME (1).flac
+39:Baby Keem/The Melodic Blue/1. trademark usa (1).flac
+40:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/2. Shame on a Nigga.mp3
+41:JID/The Forever Story/14. Better Days.flac
+42:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/4. TERROR PACKETS (1).flac
+43:Danny Brown/Atrocity Exhibition/10. Dance In The Water (1).flac
+44:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/6. Da Mystery of Chessboxin’.mp3
+45:Vince Staples/Summertime ’06/8. Jump Off the Roof (1).flac
+46:Danny Brown/Atrocity Exhibition/13. Today (1).flac
+47:Kendrick Lamar/good Kid, m.A.A.d city/1. Sherane a.k.a Master Splinter’s Daughter (1).flac
+48:Vince Staples/Big Fish Theory/7. Yeah Right.flac
+49:Baby Keem/The Melodic Blue/15. vent (1).flac
+50:Kendrick Lamar/To Pimp a Butterfly/7. Alright (1).flac
+51:The Notorious B.I.G_/Ready to Die_ The Remaster/3. Gimme the Loot (1).flac
+52:Run the Jewels/Run the Jewels 2/5. Angel Duster (1).mp3
+53:Kendrick Lamar/good Kid, m.A.A.d city/9. Swimming Pools (Drank) (1).flac
+54:Danny Brown/Atrocity Exhibition/15. Hell For It (1).flac
+55:Baby Keem/The Melodic Blue/2. pink panties (1).flac
+56:Baby Keem/The Melodic Blue/10. family ties (1).flac
+57:Baby Keem/The Melodic Blue/4. range brothers (1).flac
+58:Baby Keem/The Melodic Blue/15. vent (1).flac
+59:Danny Brown/Atrocity Exhibition/11. From The Ground (1).flac
+60:JID/The Forever Story/9. Sistanem.flac
+61:JID/The Forever Story/13. Money.flac
+62:Kendrick Lamar/To Pimp a Butterfly/2. For Free_ (interlude) (1).flac
+63:Tyler, the Creator/Scum Fuck Flower Boy/2. Where This Flower Blooms.mp3
+64:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/4. TERROR PACKETS (1).flac
+65:Tyler, the Creator/Scum Fuck Flower Boy/5. Who Dat Boy.mp3
+66:Baby Keem/The Melodic Blue/12. durag activity (1).flac
+67:Kendrick Lamar/To Pimp a Butterfly/10. Hood Politics (1).flac
+68:Kendrick Lamar/DAMN_/14. DUCKWORTH. (1).flac
+69:Denzel Curry X Kenny Beats/Unlocked/2. Take_it_Back_v2 (1).mp3
+70:J.I.D/DiCaprio 2/7. Workin Out (1).flac
+71:Danny Brown/Atrocity Exhibition/7. Goldust (1).flac
+72:J.I.D/DiCaprio 2/12. Just da Other Day (1).flac
+73:Kendrick Lamar/DAMN_/13. GOD. (1).flac
+74:Dreamville/Revenge of the Dreamers III_ Director's Cut/11. Costa Rica (1).flac
+75:Kendrick Lamar/good Kid, m.A.A.d city/12. Compton (1).flac
+76:The Weeknd/After Hours/9. Blinding Lights.flac
+77:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/7. Wu‐Tang Clan Ain’t Nuthing ta F’ Wit.mp3
+78:Baby Keem/The Melodic Blue/7. south africa (1).flac
+79:Kendrick Lamar/DAMN_/3. YAH. (1).flac
+80:Danny Brown/Atrocity Exhibition/8. White Lines (1).flac
+81:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/2. WAIL OF THE BANSHEE (1).flac
+82:Tyler, the Creator/Scum Fuck Flower Boy/9. I Ain’t Got Time!.mp3
+83:Kendrick Lamar/good Kid, m.A.A.d city/8. m.A.A.d city (1).flac
+84:J.I.D/DiCaprio 2/14. Hasta luego (1).flac
+85:Tyler, the Creator/Scum Fuck Flower Boy/12. November.mp3
+86:Denzel Curry X Kenny Beats/Unlocked/8. ꞌCosmicꞌ.m4a (1).mp3
+87:JID/The Forever Story/3. Dance Now.flac
+88:Danny Brown/Atrocity Exhibition/2. Tell Me What I Don't Know (1).flac
+89:Danny Brown/Atrocity Exhibition/12. When It Rain (1).flac
+90:J.I.D/DiCaprio 2/4. Off Deez (1).flac
+91:JID with Denzel Curry/Bruuuh (remix)/1. Bruuuh (remix) (1).flac
+92:Run the Jewels/Run the Jewels/5. Sea Legs (1).mp3
+93:Denzel Curry X Kenny Beats/Unlocked/4. Pyro (leak 2019) (1).mp3
+94:Kendrick Lamar/good Kid, m.A.A.d city/4. Bitch, Don’t Kill My Vibe (remix) (1).flac
+95:Kendrick Lamar/DAMN_/11. XXX. (1).flac
+96:Run the Jewels/Run the Jewels 2/4. Crown (1).mp3
+97:Kendrick Lamar/To Pimp a Butterfly/11. How Much a Dollar Cost (1).flac
+98:Danny Brown/Atrocity Exhibition/9. Pneumonia (1).flac
+99:J.I.D/DiCaprio 2/13. Despacito Too (1).flac
+100:Baby Keem/The Melodic Blue/13. booman (1).flac
+101:JID/The Forever Story/8. Bruddanem.flac
+102:Kendrick Lamar/DAMN_/8. HUMBLE. (1).flac
+103:Kendrick Lamar/DAMN_/4. ELEMENT. (1).flac
+104:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/10. BURN TO ASHES (1).flac
+105:Kendrick Lamar/DAMN_/5. FEEL. (1).flac
+106:Danny Brown/Atrocity Exhibition/4. Really Doe (1).flac
+107:Kendrick Lamar/DAMN_/12. FEAR. (1).flac
+108:Denzel Curry X Kenny Beats/Unlocked/6. So.Incredible.pkg (1).mp3
+109:Kendrick Lamar/good Kid, m.A.A.d city/11. Real (1).flac
+110:Kendrick Lamar/good Kid, m.A.A.d city/2. Bitch, Don't Kill My Vibe (1).flac
+111:Run the Jewels/Run the Jewels/10. A Christmas Fucking Miracle (1).mp3
+112:Baby Keem/The Melodic Blue/5. issues (1).flac
+113:JID/The Forever Story/15. Lauder Too.flac
+114:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/3. I LIE HERE BURIED WITH MY RINGS AND MY DRESSES (1).flac
+115:Kendrick Lamar/DAMN_/7. PRIDE. (1).flac
+116:Kendrick Lamar/To Pimp a Butterfly/14. You Ain't Gotta Lie (Momma Said) (1).flac
+117:Backxwash/I LIE HERE BURIED WITH MY RINGS AND MY DRESSES/1. PURPOSE OF PAIN (1).flac
+118:Kendrick Lamar/DAMN_/2. DNA. (1).flac
+119:Kendrick Lamar/To Pimp a Butterfly/16. Mortal Man (1).flac
+120:Run the Jewels/Run the Jewels 3/1. Down (1).mp3
+121:Run the Jewels/Run the Jewels 3/8. Thieves! (Screamed the Ghost) (1).mp3
+122:JID/The Forever Story/7. Kody Blu 31.flac
+123:XXXTENTACION/_/4. SAD!.flac
+124:Kendrick Lamar/To Pimp a Butterfly/6. u (1).flac
+125:Kendrick Lamar/To Pimp a Butterfly/3. King Kunta (1).flac
+126:Baby Keem/The Melodic Blue/8. lost souls (1).flac
+127:JID/The Forever Story/2. Raydar.flac
+128:J.I.D/DiCaprio 2/6. Off da Zoinkys (1).flac
+129:Baby Keem/The Melodic Blue/16. 16 (1).flac
+130:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/8. C.R.E.A.M..mp3
+131:Run the Jewels/Run the Jewels 3/5. Hey Kids (Bumaye) (1).mp3
+132:JID/The Forever Story/5. Can’t Punk Me.flac
+133:Danny Brown/Atrocity Exhibition/3. Rolling Stone (1).flac
+134:JID/The Forever Story/11. Stars.flac
+135:The Notorious B.I.G_/Ready to Die_ The Remaster/9. The What (1).flac
+136:Baby Keem/The Melodic Blue/11. scars (1).flac
+137:JID/The Forever Story/12. Just in Time.flac
+138:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/4. Wu‐Tang_ 7th Chamber.mp3
+139:Kendrick Lamar/good Kid, m.A.A.d city/3. Now or Never (1).flac
+140:JID/The Forever Story/4. Crack Sandwich.flac
+141:Danny Brown/Atrocity Exhibition/5. Lost (1).flac
+142:J.I.D/DiCaprio 2/8. Tiiied (1).flac
+143:Kendrick Lamar/good Kid, m.A.A.d city/4. The Art of Peer Pressure (1).flac
+144:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/3. Clan in da Front.mp3
+145:Kendrick Lamar/good Kid, m.A.A.d city/10. Sing About Me, I'm Dying of Thirst (1).flac
+146:Kendrick Lamar/good Kid, m.A.A.d city/6. Poetic Justice (1).flac
+147:Vince Staples/Summertime ’06/9. Señorita (1).flac
+148:Wu‐Tang Clan/Enter the Wu‐Tang (36 Chambers)/10. Protect Ya Neck.mp3
+149:Kendrick Lamar/good Kid, m.A.A.d city/9. Swimming Pools (Drank) (2).flac
+150:Kendrick Lamar/To Pimp a Butterfly/15. i (1).flac
+151:Kendrick Lamar/good Kid, m.A.A.d city/1. The Recipe (1).flac
+152:Kendrick Lamar/To Pimp a Butterfly/1. Wesley's Theory (1).flac
 playlist_end

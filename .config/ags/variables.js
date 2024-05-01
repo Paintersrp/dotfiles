@@ -20,42 +20,62 @@ export const SCREEN_WIDTH = Number(exec(`bash -c "xrandr --current | grep '*' | 
 export const SCREEN_HEIGHT = Number(exec(`bash -c "xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f2 | head -1" | awk '{print $1}'`));
 
 // Mode switching
-export const currentShellMode = Variable('normal', {}) // normal, focus
+export const currentShellMode = Variable('focus', {}) // normal, focus, none
+export const unhideToMode = Variable('focus', {})
 globalThis['currentMode'] = currentShellMode;
 globalThis['cycleMode'] = () => {
-    if (currentShellMode.value === 'normal') {
-        currentShellMode.value = 'focus';
-    } else {
-        currentShellMode.value = 'normal';
-    }
+  if (currentShellMode.value === 'normal') {
+    currentShellMode.value = 'focus';
+  } else if (currentShellMode.value === 'focus') {
+    currentShellMode.value = 'none';
+  } else {
+    currentShellMode.value = 'normal';
+  }
 }
+
+// globalThis['hideBar'] = () => {
+//   if (currentShellMode.value === 'normal') {
+//     currentShellMode.value = 'focus';
+//   } else {
+//     currentShellMode.value = 'normal';
+//   }
+// }
+
+// globalThis['hideBar'] = () => {
+//   if (currentShellMode === 'none') {
+//     currentShellMode.value = unhideToMode
+//   } else {
+//     unhideToMode.value = currentShellMode.value
+//     currentShellMode.value = 'none'
+//   }
+// }
 
 // // Window controls
 const range = (length, start = 1) => Array.from({ length }, (_, i) => i + start);
 globalThis['toggleWindowOnAllMonitors'] = (name) => {
-    range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
-        App.toggleWindow(`${name}${id}`);
-    });
+  range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
+    App.toggleWindow(`${name}${id}`);
+  });
 }
 globalThis['closeWindowOnAllMonitors'] = (name) => {
-    range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
-        App.closeWindow(`${name}${id}`);
-    });
+  range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
+    App.closeWindow(`${name}${id}`);
+  });
 }
 globalThis['openWindowOnAllMonitors'] = (name) => {
-    range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
-        App.openWindow(`${name}${id}`);
-    });
+  range(Gdk.Display.get_default()?.get_n_monitors() || 1, 0).forEach(id => {
+    App.openWindow(`${name}${id}`);
+  });
 }
 
 globalThis['closeEverything'] = () => {
-    const numMonitors = Gdk.Display.get_default()?.get_n_monitors() || 1;
-    for (let i = 0; i < numMonitors; i++) {
-        App.closeWindow(`cheatsheet${i}`);
-        App.closeWindow(`click2close${i}`);
-    }
-    App.closeWindow('sideleft');
-    App.closeWindow('sideright');
-    App.closeWindow('overview');
-    App.closeWindow('session');
+  const numMonitors = Gdk.Display.get_default()?.get_n_monitors() || 1;
+  for (let i = 0; i < numMonitors; i++) {
+    App.closeWindow(`cheatsheet${i}`);
+    App.closeWindow(`click2close${i}`);
+  }
+  App.closeWindow('sideleft');
+  App.closeWindow('sideright');
+  App.closeWindow('overview');
+  App.closeWindow('session');
 };

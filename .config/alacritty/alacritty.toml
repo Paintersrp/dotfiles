@@ -1,11 +1,11 @@
 import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
+  "~/.config/alacritty/tokyonight-moon.toml"
 ]
 
 live_config_reload = true
 
 [env]
-TERM = "screen-256color"
+TERM = "xterm-256color"
 
 [font]
 size = 10
@@ -15,8 +15,8 @@ family = "JetBrains Mono NF"
 style = "Semibold"
 
 [window]
-opacity = 0.9
+opacity = 0.95
 
 [window.padding]
-x = 10
-y = 10
+x = 5
+y = 5

@@ -1,0 +1,15 @@
+[Unit]
+Description=Dropbox (rclone)
+AssertPathIsDirectory=%h/notes
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount --vfs-cache-mode full notes:Apps/remotely-save/Notes %h/notes
+ExecStop=/usr/bin/fusermount -zu %h/notes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+

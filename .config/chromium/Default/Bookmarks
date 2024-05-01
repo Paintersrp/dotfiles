@@ -1,11 +1,88 @@
 {
-   "checksum": "a3f1b142730637aac3782a3e3fdcbb51",
+   "checksum": "81baba2f745fa5d225b0b183d3624ce0",
    "roots": {
       "bookmark_bar": {
-         "children": [  ],
+         "children": [ {
+            "date_added": "13358223432398867",
+            "date_last_used": "0",
+            "guid": "aebfa13f-fc8d-4f30-8945-6ef34df9f655",
+            "id": "7",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://shell.seedhost.eu/tristsin/syncthing/"
+         }, {
+            "date_added": "13358252733304336",
+            "date_last_used": "13358259032737773",
+            "guid": "41c95adf-2c5c-47b8-86f6-81f43a45d758",
+            "id": "9",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://shell.seedhost.eu/tristsin/sonarr4/"
+         }, {
+            "date_added": "13358252846329558",
+            "date_last_used": "13358259031368861",
+            "guid": "6d386cfa-70ed-4609-a63b-b92c0e16b20a",
+            "id": "10",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://shell.seedhost.eu/tristsin/radarr/"
+         }, {
+            "date_added": "13358253895229374",
+            "date_last_used": "0",
+            "guid": "11bd828a-5fc7-4614-8bac-354a08ea3a70",
+            "id": "12",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://shell.seedhost.eu/tristsin/jackett/UI/Dashboard"
+         }, {
+            "date_added": "13358253009084200",
+            "date_last_used": "0",
+            "guid": "d40fe44d-7c05-4943-9bf2-9a548ce75693",
+            "id": "11",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://tristsin.shell.seedhost.eu/rutorrent/"
+         }, {
+            "date_added": "13358259377061066",
+            "date_last_used": "0",
+            "guid": "504d1f1d-2e52-4f52-ab37-984d72cd90e8",
+            "id": "13",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://iptorrents.com/t"
+         }, {
+            "date_added": "13358259384105525",
+            "date_last_used": "0",
+            "guid": "cf4a7f76-39c1-4d50-be92-c52d8f916076",
+            "id": "14",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "",
+            "type": "url",
+            "url": "https://trakt.tv/"
+         } ],
          "date_added": "13357917172294633",
          "date_last_used": "0",
-         "date_modified": "0",
+         "date_modified": "13358259384105525",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
@@ -26,7 +103,7 @@
          } ],
          "date_added": "13357917172294635",
          "date_last_used": "0",
-         "date_modified": "13357917669332626",
+         "date_modified": "13358223432398867",
          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
          "name": "Other bookmarks",

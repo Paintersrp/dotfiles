@@ -1,6 +1,26 @@
-2024/04/19-07:51:44.370 ebd Creating DB /home/srp/.config/chromium/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb since it was missing.
-2024/04/19-07:51:44.374 ebd Reusing MANIFEST /home/srp/.config/chromium/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/04/19-07:51:44.551 ec0 Level-0 table #5: started
-2024/04/19-07:51:44.553 ec0 Level-0 table #5: 758 bytes OK
-2024/04/19-07:51:44.556 ec0 Delete type=0 #3
-2024/04/19-07:51:44.556 ebd Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/04/22-01:15:43.083 ccfa Reusing MANIFEST /home/srp/.config/chromium/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/22-01:15:43.083 ccfa Recovering log #4
+2024/04/22-01:15:43.083 ccfa Reusing old log /home/srp/.config/chromium/Default/IndexedDB/https_imgur.com_0.indexeddb.leveldb/000004.log 
+2024/04/22-01:15:43.220 ccfc Level-0 table #8: started
+2024/04/22-01:15:43.222 ccfc Level-0 table #8: 3429 bytes OK
+2024/04/22-01:15:43.225 ccfc Delete type=0 #4
+2024/04/22-01:15:43.225 ccfa Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/04/22-01:15:49.624 ccfa Level-0 table #10: started
+2024/04/22-01:15:49.626 ccfa Level-0 table #10: 1998 bytes OK
+2024/04/22-01:15:49.629 ccfa Delete type=0 #7
+2024/04/22-01:15:49.630 ccfa Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x007\x001\x008\x007\x007\x000\x001\x002\x005\x001\x009\x004\x00:\x00w\x00e\x00b\x00:\x006\x00a\x00f\x003\x00e\x009\x005\x00a\x006\x00d\x004\x005\x001\x000\x005\x00d\x004\x00a\x00f\x000\x007\x003' @ 175 : 1
+2024/04/22-01:15:49.630 ccfa Compacting 1@0 + 1@1 files
+2024/04/22-01:15:49.632 ccfa Generated table #11@0: 80 keys, 2207 bytes
+2024/04/22-01:15:49.632 ccfa Compacted 1@0 + 1@1 files => 2207 bytes
+2024/04/22-01:15:49.635 ccfa compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/04/22-01:15:49.636 ccfa Delete type=2 #8
+2024/04/22-01:15:49.636 ccfa Delete type=2 #10
+2024/04/22-01:15:49.637 ccfa Manual compaction at level-0 from '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x007\x001\x008\x007\x007\x000\x001\x002\x005\x001\x009\x004\x00:\x00w\x00e\x00b\x00:\x006\x00a\x00f\x003\x00e\x009\x005\x00a\x006\x00d\x004\x005\x001\x000\x005\x00d\x004\x00a\x00f\x000\x007\x003' @ 175 : 1 .. (end); will stop at (end)
+2024/04/22-01:15:49.637 ccfa Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x007\x001\x008\x007\x007\x000\x001\x002\x005\x001\x009\x004\x00:\x00w\x00e\x00b\x00:\x006\x00a\x00f\x003\x00e\x009\x005\x00a\x006\x00d\x004\x005\x001\x000\x005\x00d\x004\x00a\x00f\x000\x007\x003' @ 199 : 1
+2024/04/22-01:15:49.637 ccfa Compacting 1@1 + 1@2 files
+2024/04/22-01:15:49.639 ccfa Generated table #12@1: 36 keys, 1730 bytes
+2024/04/22-01:15:49.639 ccfa Compacted 1@1 + 1@2 files => 1730 bytes
+2024/04/22-01:15:49.642 ccfa compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/04/22-01:15:49.642 ccfa Delete type=2 #5
+2024/04/22-01:15:49.642 ccfa Delete type=2 #11
+2024/04/22-01:15:49.643 ccfa Manual compaction at level-1 from '\x00\x03\x01\x02\x013\x00[\x00D\x00E\x00F\x00A\x00U\x00L\x00T\x00]\x00!\x001\x00:\x007\x001\x008\x007\x007\x000\x001\x002\x005\x001\x009\x004\x00:\x00w\x00e\x00b\x00:\x006\x00a\x00f\x003\x00e\x009\x005\x00a\x006\x00d\x004\x005\x001\x000\x005\x00d\x004\x00a\x00f\x000\x007\x003' @ 199 : 1 .. (end); will stop at (end)

@@ -92,9 +92,9 @@ https://github.com/GradienceTeam/Gradience
 @define-color BLACK_500 #393634;
 @define-color BLACK_700 #33302F;
 @define-color BLACK_900 #2B2928;
-@define-color accent_bg_color #B7C4FF;
-@define-color accent_fg_color #002681;
-@define-color accent_color #B7C4FF;
+@define-color accent_bg_color #FFFFFF;
+@define-color accent_fg_color #1B1B1B;
+@define-color accent_color #FFFFFF;
 @define-color destructive_bg_color #FFB4AB;
 @define-color destructive_fg_color #690005;
 @define-color destructive_color #FFB4AB;
@@ -104,22 +104,22 @@ https://github.com/GradienceTeam/Gradience
 @define-color warning_fg_color rgba(0, 0, 0, 0.87);
 @define-color error_bg_color #FFB4AB;
 @define-color error_fg_color #690005;
-@define-color window_bg_color #11131C;
-@define-color window_fg_color #E1E1EF;
-@define-color view_bg_color #11131C;
-@define-color view_fg_color #E1E1EF;
+@define-color window_bg_color #131313;
+@define-color window_fg_color #E2E2E2;
+@define-color view_bg_color #131313;
+@define-color view_fg_color #E2E2E2;
 @define-color headerbar_bg_color mix(@dialog_bg_color, @window_bg_color, 0.5);
-@define-color headerbar_fg_color #E5E0FF;
-@define-color headerbar_border_color #484567;
+@define-color headerbar_fg_color #E2E2E2;
+@define-color headerbar_border_color #474747;
 @define-color headerbar_backdrop_color @headerbar_bg_color;
 @define-color headerbar_shade_color rgba(0, 0, 0, 0.09);
-@define-color card_bg_color #11131C;
-@define-color card_fg_color #E5E0FF;
+@define-color card_bg_color #131313;
+@define-color card_fg_color #E2E2E2;
 @define-color card_shade_color rgba(0, 0, 0, 0.09);
-@define-color dialog_bg_color #484567;
-@define-color dialog_fg_color #E5E0FF;
-@define-color popover_bg_color #484567;
-@define-color popover_fg_color #E5E0FF;
+@define-color dialog_bg_color #474747;
+@define-color dialog_fg_color #E2E2E2;
+@define-color popover_bg_color #474747;
+@define-color popover_fg_color #E2E2E2;
 @define-color thumbnail_bg_color #1a1b26;
 @define-color thumbnail_fg_color #AEE5FA;
 @define-color shade_color rgba(0, 0, 0, 0.36);
@@ -130,5 +130,5 @@ https://github.com/GradienceTeam/Gradience
 @define-color sidebar_backdrop_color @sidebar_bg_color;
 
 .navigation-sidebar {
-background-color: #11131C;
+background-color: #131313;
 }
