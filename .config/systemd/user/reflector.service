@@ -1,0 +1,7 @@
+[Unit]
+Description=Weekly Reflector Update
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/reflector --sort rate --save /etc/pacman.d/mirrorlist
+

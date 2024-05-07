@@ -15,7 +15,7 @@ family = "JetBrains Mono NF"
 style = "Semibold"
 
 [window]
-opacity = 0.95
+opacity = 0.85
 
 [window.padding]
 x = 5

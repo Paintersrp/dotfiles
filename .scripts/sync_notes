@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Define the directory to watch
+DIRECTORY_TO_WATCH="$HOME/rclone-test"
+
+# Define the command to execute when a file change event occurs
+SYNC_COMMAND="rclone bisync notes:Apps/remotely-save/Notes rclone-test --resilient --recover --max-lock 2m --conflict-resolve newer --conflict-loser delete"
+
+# Function to print feedback message
+print_feedback() {
+	echo "Syncing notes directory..."
+}
+
+# Use a while loop to keep the script running
+while true; do
+	# Monitor the directory for one batch of events and then exit
+	inotifywait -r -e modify,move,create,delete "$DIRECTORY_TO_WATCH" --format '%:e %f'
+
+	# Execute the sync command whenever a file change event occurs
+	$SYNC_COMMAND
+	print_feedback
+
+	# Optional: sleep for a brief moment to prevent immediate re-triggering
+	sleep 2
+done

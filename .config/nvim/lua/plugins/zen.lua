@@ -15,6 +15,9 @@ return {
     cmd = "ZenMode",
     opts = {
       plugins = {
+        options = {
+          laststatus = 0,
+        },
         gitsigns = true,
         tmux = true,
       },

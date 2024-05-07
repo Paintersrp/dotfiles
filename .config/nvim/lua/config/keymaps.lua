@@ -54,3 +54,13 @@ keymap.set("n", "<Leader>re", ":<C-u>!an echo ", opts)
 -- keymap.set("n", "<Leader>rE", ":<C-u>!an op<CR>", opts)
 keymap.set("n", "<Leader>rt", ":<C-u>!an tasks echo ", opts)
 -- keymap.set("n", "<Leader>rT", ":<C-u>!alacritty an tasks op<CR>", opts)
+
+keymap.set("n", "<Leader>t", "/\\[ \\]<CR>", opts)
+
+keymap.set("n", "gst", "<Cmd>MDListItemBelow<CR>", opts)
+keymap.set("n", "gsa", "<Cmd>MDListItemAbove<CR>", opts)
+keymap.set("n", "gsf", "<Cmd>MDTaskToggle<CR>", opts)
+keymap.set("x", "gsf", ":MDTaskToggle<CR>", opts)
+
+keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
+keymap.set("n", "<leader>ph", "o> [!todo]<CR>> [[Placeholder]] words here.<Esc>", opts)

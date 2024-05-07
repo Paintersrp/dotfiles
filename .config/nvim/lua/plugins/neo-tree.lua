@@ -47,6 +47,7 @@ return {
   end,
   opts = {
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
+
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     filesystem = {
       bind_to_cwd = false,
@@ -90,11 +91,22 @@ return {
     end
 
     local events = require("neo-tree.events")
-    opts.event_handlers = opts.event_handlers or {}
+    opts.event_handlers = {
+      {
+        event = "neo_tree_buffer_enter",
+        handler = function()
+          vim.cmd([[
+              setlocal relativenumber
+            ]])
+        end,
+      },
+    }
+
     vim.list_extend(opts.event_handlers, {
       { event = events.FILE_MOVED, handler = on_move },
       { event = events.FILE_RENAMED, handler = on_move },
     })
+
     require("neo-tree").setup(opts)
     vim.api.nvim_create_autocmd("TermClose", {
       pattern = "*lazygit",

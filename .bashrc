@@ -75,13 +75,16 @@ alias cdreact="cd $CODE/react"
 alias syu='sudo pacman -Syu'
 alias t='tmux'
 alias e='exit'
-# alias an="~/Code/go/an-dev/an-cli"
+alias an="~/Code/go/an-dev/an"
 
 # fzf with preview
 alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 # fzf to vim
 alias vf='nvim $(fp)'
+
+alias sync="rclone bisync notes:Apps/remotely-save/Notes rclone-test --resilient --recover --max-lock 2m --conflict-resolve newer --conflict-loser delete"
+alias resync="rclone bisync notes:Apps/remotely-save/Notes rclone-test --resync"
 
 ####################################################################################
 ####################################################################################
@@ -132,3 +135,4 @@ auth() {
 
 	ssh-add -q ~/.ssh/id_ed25519
 }
+. "$HOME/.cargo/env"

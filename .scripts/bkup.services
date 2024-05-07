@@ -1,0 +1,25 @@
+# sync service
+
+
+[Unit]
+Description=Sync desktop directory with Dropbox using rclone
+
+[Service]
+Type=oneshot
+ExecStart=rclone bisync notes:Apps/remotely-save/Notes rclone-test --resilient --recover --max-lock 2m --conflict-resolve newer
+ExecStartPost=/bin/logger "rclone sync completed at $(date)"
+
+[Install]
+WantedBy=default.target
+
+
+[Unit]
+Description=Run rclone sync every 30 seconds
+
+[Timer]
+OnBootSec=0min
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target
+
