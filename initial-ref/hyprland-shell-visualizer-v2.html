@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hyprland Shell Visualizer</title>
+<style>
+  :root{
+    --bg:#161821;
+    --bg-2:#1a1d28;
+    --panel:#1d2030;
+    --panel-2:#212536;
+    --panel-3:#25293a;
+    --text:#d2daf7;
+    --text-strong:#dfe6ff;
+    --muted:#8b95b9;
+    --muted-2:#59627f;
+    --line:#343a50;
+    --accent:#82aaff;
+    --accent-soft:#9ab8ff;
+    --green:#c3e88d;
+    --yellow:#ffc777;
+    --red:#ff757f;
+    --purple:#c099ff;
+    --cyan:#86e1fc;
+    --shadow:0 28px 80px rgba(0,0,0,.38),0 2px 14px rgba(0,0,0,.28);
+  }
+  *{box-sizing:border-box}
+  html,body{width:100%;height:100%;margin:0;background:#0f1118;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
+  body{display:grid;place-items:center}
+  .screen{position:relative;width:100vw;height:100vh;min-width:900px;min-height:560px;overflow:hidden;background:var(--bg)}
+  .wallpaper{position:absolute;inset:28px 0 0;background:
+      linear-gradient(180deg,rgba(255,255,255,.012),rgba(255,255,255,0) 34%),
+      #161821;}
+  .wallpaper:before,.wallpaper:after{content:"";position:absolute;pointer-events:none}
+  .wallpaper:before{left:7vw;top:9vh;width:54vw;height:1px;background:rgba(130,170,255,.11);box-shadow:0 180px 0 rgba(130,170,255,.035),0 360px 0 rgba(130,170,255,.025)}
+  .wallpaper:after{right:10vw;bottom:12vh;width:18vw;height:18vw;border:1px solid rgba(130,170,255,.05);transform:rotate(18deg);border-radius:24px}
+
+  /* top bar */
+  .topbar{position:absolute;z-index:50;inset:0 0 auto;height:28px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 12px;border-bottom:1px solid rgba(255,255,255,.035);background:#12141c;color:var(--muted);font-size:11px;letter-spacing:.01em}
+  .workspaces{display:flex;align-items:center;gap:2px}
+  .ws{width:24px;height:20px;display:grid;place-items:center;border-radius:5px;color:#59617d;font-weight:650;position:relative}
+  .ws.active{color:var(--text-strong);background:#23283a}
+  .ws.active:after{content:"";position:absolute;bottom:2px;width:10px;height:1px;background:var(--accent);border-radius:1px}
+  .ws.has{color:#aab4d3}
+  .now-playing{justify-self:center;display:flex;align-items:center;gap:7px;max-width:440px;min-width:0;color:#a3adcf;font-variant-numeric:tabular-nums}
+  .now-playing .mark{font-size:9px;color:var(--accent-soft)}
+  .now-playing .track{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .now-playing strong{font-weight:600;color:#c8d1ee}
+  .clock{justify-self:end;color:#bec7e5;font-variant-numeric:tabular-nums;font-weight:560}
+
+  /* base windows */
+  .workspace-base{position:absolute;inset:28px 0 0;padding:56px 64px 64px;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);gap:24px;opacity:.98}
+  .terminal,.editor{border:1px solid #24293a;background:#181b25;box-shadow:0 14px 34px rgba(0,0,0,.22);border-radius:8px;overflow:hidden}
+  .terminal{height:58vh;align-self:center}
+  .editor{height:68vh;align-self:center}
+  .window-head{height:22px;border-bottom:1px solid rgba(255,255,255,.025);display:flex;align-items:center;padding:0 10px;color:#6f7898;font-size:9px}
+  .window-head .title{margin:0;color:#7f89a9}
+  .term-body{padding:18px 20px;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:12px;line-height:1.75;color:#9aa4c7}
+  .term-body .cmd{color:#cbd4f7}.term-body .path{color:var(--cyan)}.term-body .ok{color:var(--green)}
+  .editor-body{display:grid;grid-template-columns:38px 1fr;height:calc(100% - 22px);font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:11px;line-height:1.65}
+  .ln{padding:14px 10px;text-align:right;color:#434a66;border-right:1px solid #222738;white-space:pre}
+  .code{padding:14px 14px;white-space:pre;color:#aab4d6}.code .k{color:var(--purple)}.code .s{color:var(--green)}.code .f{color:var(--cyan)}
+
+  /* overlays */
+  .veil{position:absolute;z-index:60;inset:28px 0 0;background:rgba(10,12,18,.50);opacity:0;pointer-events:none;transition:opacity .14s ease,background .14s ease}
+  .launcher,.overview,.scratch{position:absolute;z-index:70;pointer-events:none;opacity:0;transition:opacity .14s ease,transform .14s ease}
+
+  .launcher{left:50%;top:17vh;width:min(650px,72vw);transform:translate(-50%,-6px);background:#1a1e2a;border:1px solid #33384d;border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+  .launcher-search{height:66px;display:grid;grid-template-columns:28px 1fr auto;align-items:center;padding:0 18px;border-bottom:1px solid #2b3043}
+  .launcher-search .glass{font-size:20px;color:#7f89aa}
+  .launcher-search input{appearance:none;border:0;outline:0;background:transparent;color:var(--text-strong);font:500 20px/1.2 Inter,ui-sans-serif,system-ui;width:100%;padding:0 10px}
+  .launcher-search input::placeholder{color:#616986}
+  .key{border:1px solid #3b4158;background:#222638;color:#7f88a8;border-radius:5px;padding:3px 6px;font:600 9px/1 ui-monospace,monospace}
+  .launcher-list{padding:10px}
+  .group-label{padding:7px 10px 6px;color:#5f6787;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em}
+  .result{height:46px;display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:center;padding:0 10px;border-radius:7px;color:#aeb7d8;font-size:12px}
+  .result .icon{width:28px;height:28px;display:grid;place-items:center;border:1px solid #2f3448;border-radius:6px;background:#202433;color:#8691b5;font-size:11px;font-weight:700}
+  .result .name{color:#d5ddf7;font-weight:560}.result .meta{color:#818bad;font-size:10px;margin-top:2px}
+  .result.selected{background:#252b3e;box-shadow:inset 2px 0 0 var(--accent)}
+  .result.selected .icon{border-color:#3b4663;color:#bdd0ff}
+  .result .right{color:#636b89;font-size:10px}
+  .launcher-foot{height:36px;border-top:1px solid #2a2f42;display:flex;align-items:center;gap:14px;padding:0 12px;color:#737d9d;font-size:9px}
+  .command-results{display:none}
+  .launcher.command-mode .search-results{display:none}
+  .launcher.command-mode .command-results{display:block}
+  .launcher-foot span{display:flex;gap:5px;align-items:center}
+
+  .overview{inset:28px 0 0;display:grid;place-items:center;transform:scale(.985)}
+  .grid9{width:min(980px,78vw);display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .desk{position:relative;aspect-ratio:16/9;background:#171a24;border:1px solid #31364b;border-radius:8px;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+  .desk .n{position:absolute;z-index:3;left:9px;top:7px;color:#737d9f;font-size:10px;font-weight:700}
+  .desk.active{border-color:#748fc5;box-shadow:0 0 0 1px rgba(130,170,255,.18),0 16px 32px rgba(0,0,0,.24)}
+  .desk.active .n{color:#d6e0ff}
+  .miniwin{position:absolute;background:#232838;border:1px solid #343a4f;border-radius:4px}
+  .miniwin.term{left:8%;top:19%;width:54%;height:64%}.miniwin.edit{right:7%;top:13%;width:31%;height:73%}.miniwin.full{left:7%;top:15%;width:86%;height:70%}.miniwin.small{left:16%;top:28%;width:62%;height:48%}
+  .miniwin:before{content:"";position:absolute;inset:0 0 auto;height:8px;border-bottom:1px solid #32384d;background:#1f2330}
+  .desk.empty:after{content:"empty";position:absolute;inset:0;display:grid;place-items:center;color:#353b53;font-size:9px;text-transform:uppercase;letter-spacing:.14em}
+  .overview-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#65708f;font-size:10px}
+
+  .scratch{right:0;top:28px;bottom:0;width:min(430px,38vw);background:#171a24;border-left:1px solid #303649;box-shadow:-28px 0 70px rgba(0,0,0,.30);transform:translateX(14px);display:grid;grid-template-rows:32px 1fr 24px}
+  .scratch-head{display:grid;grid-template-columns:1fr auto;align-items:center;padding:0 11px;border-bottom:1px solid #292f41;color:#8f98b7;font-size:10px}
+  .scratch-head strong{color:#c3ccee;font-weight:600}.scratch-head .kbd{color:#59617f;font-family:ui-monospace,monospace}
+  .scratch-editor{display:grid;grid-template-columns:40px 1fr;min-height:0;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:11px;line-height:1.7}
+  .scratch-ln{padding:13px 10px;text-align:right;white-space:pre;color:#41485f;border-right:1px solid #252a3a;user-select:none}
+  .scratch-code{padding:13px 14px;white-space:pre-wrap;overflow:auto;color:#b4bddc;caret-color:var(--accent)}
+  .scratch-code .h{color:#d7def7;font-weight:650}.scratch-code .todo{color:var(--yellow)}.scratch-code .done{color:var(--green)}.scratch-code .dim{color:#646d8d}.scratch-code .link{color:var(--cyan)}
+  .scratch-status{display:flex;align-items:center;gap:10px;padding:0 10px;background:#202536;border-top:1px solid #2a3043;color:#697292;font-size:9px;font-family:ui-monospace,monospace}.scratch-status .mode{color:#b9c8ee;font-weight:700}.scratch-status .pos{margin-left:auto}
+
+  body[data-state="launcher"] .veil,body[data-state="overview"] .veil{opacity:1}
+  body[data-state="overview"][data-veil="strong"] .veil{background:rgba(8,10,16,.68)}
+  body[data-state="launcher"] .launcher{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+  body[data-state="overview"] .overview{opacity:1;pointer-events:auto;transform:scale(1)}
+  body[data-state="scratch"] .scratch{opacity:1;pointer-events:auto;transform:translateX(0)}
+
+  @media(max-width:1100px){
+    .workspace-base{padding:44px 34px;grid-template-columns:1fr}.editor{display:none}.terminal{height:66vh}
+    .launcher{width:min(640px,84vw)}
+    .grid9{width:86vw;gap:10px}
+    .scratch{width:min(420px,46vw)}
+  }
+</style>
+</head>
+<body data-state="base" data-veil="same">
+<div class="screen">
+  <div class="topbar">
+    <div class="workspaces" aria-label="Workspaces">
+      <div class="ws has">1</div><div class="ws has">2</div><div class="ws active">3</div><div class="ws has">4</div><div class="ws">5</div><div class="ws">6</div><div class="ws">7</div><div class="ws">8</div><div class="ws">9</div>
+    </div>
+    <div class="now-playing"><span class="mark">▶</span><span class="track"><strong>Nils Frahm</strong> — Says</span></div>
+    <div class="clock">17:47</div>
+  </div>
+
+  <div class="wallpaper"></div>
+  <main class="workspace-base" aria-label="Representative workspace">
+    <section class="terminal">
+      <div class="window-head"><span class="title">~/src/junction · zsh</span></div>
+      <div class="term-body">
+        <div><span class="path">~/src/junction</span> <span class="cmd">git status --short</span></div>
+        <div> M apps/web/src/routes/executions.tsx</div>
+        <div> M packages/control-plane/src/events.ts</div>
+        <div>&nbsp;</div>
+        <div><span class="path">~/src/junction</span> <span class="cmd">pnpm test control-plane</span></div>
+        <div class="ok">✓ 42 tests passed</div>
+        <div>&nbsp;</div>
+        <div><span class="path">~/src/junction</span> <span class="cmd">_</span></div>
+      </div>
+    </section>
+    <section class="editor">
+      <div class="window-head"><span class="title">execution.ts · nvim</span></div>
+      <div class="editor-body"><div class="ln">1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11</div><div class="code"><span class="k">type</span> ExecutionState = {\n  phase: <span class="s">'construction'</span> | <span class="s">'qualification'</span>\n  activeUnit?: string\n}\n\n<span class="k">export function</span> <span class="f">deriveView</span>(state: ExecutionState) {\n  <span class="k">return</span> {\n    primary: state.activeUnit,\n    phase: state.phase,\n  }\n}</div></div>
+    </section>
+  </main>
+
+  <div class="veil"></div>
+
+  <section class="launcher" aria-label="Search launcher">
+    <div class="launcher-search"><div class="glass">⌕</div><input value="term" aria-label="Search applications and windows"/><div class="key">ESC</div></div>
+    <div class="launcher-list">
+      <div class="search-results">
+      <div class="group-label">Applications</div>
+      <div class="result selected"><div class="icon">›_</div><div><div class="name">Terminal</div><div class="meta">kitty · application</div></div><div class="right">↵ Open</div></div>
+      <div class="result"><div class="icon">NV</div><div><div class="name">Neovim</div><div class="meta">editor · application</div></div><div class="right">⌘2</div></div>
+      <div class="result"><div class="icon">FF</div><div><div class="name">Firefox</div><div class="meta">browser · application</div></div><div class="right">⌘3</div></div>
+      <div class="group-label">Windows</div>
+      <div class="result"><div class="icon">3</div><div><div class="name">junction — control plane</div><div class="meta">Neovim · workspace 3</div></div><div class="right">↵ Focus</div></div>
+      <div class="result"><div class="icon">1</div><div><div class="name">docs — Mozilla Firefox</div><div class="meta">Firefox · workspace 1</div></div><div class="right">↵ Focus</div></div>
+      </div>
+      <div class="command-results">
+        <div class="group-label">Commands</div>
+        <div class="result selected"><div class="icon">→</div><div><div class="name">Lock session</div><div class="meta">shell command</div></div><div class="right">↵ Run</div></div>
+        <div class="result"><div class="icon">↻</div><div><div class="name">Reload Hyprland</div><div class="meta">shell command</div></div><div class="right">↵ Run</div></div>
+        <div class="result"><div class="icon">⏻</div><div><div class="name">Power menu</div><div class="meta">shell command</div></div><div class="right">↵ Run</div></div>
+      </div>
+    </div>
+    <div class="launcher-foot"><span><b class="key">↑↓</b> Navigate</span><span><b class="key">↵</b> Open</span><span><b class="key">&gt;</b> Commands</span></div>
+  </section>
+
+  <section class="overview" aria-label="Workspace overview">
+    <div class="grid9">
+      <div class="desk"><span class="n">1</span><div class="miniwin full"></div></div>
+      <div class="desk"><span class="n">2</span><div class="miniwin small"></div></div>
+      <div class="desk active"><span class="n">3</span><div class="miniwin term"></div><div class="miniwin edit"></div></div>
+      <div class="desk"><span class="n">4</span><div class="miniwin full"></div></div>
+      <div class="desk empty"><span class="n">5</span></div>
+      <div class="desk empty"><span class="n">6</span></div>
+      <div class="desk"><span class="n">7</span><div class="miniwin small"></div></div>
+      <div class="desk empty"><span class="n">8</span></div>
+      <div class="desk empty"><span class="n">9</span></div>
+    </div>
+    <div class="overview-hint">1–9 select workspace · esc return</div>
+  </section>
+
+  <aside class="scratch" aria-label="Neovim scratchpad drawer">
+    <div class="scratch-head"><strong>scratch.md</strong><span class="kbd">SUPER+S</span></div>
+    <div class="scratch-editor"><div class="scratch-ln">1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16</div><div class="scratch-code" contenteditable="true"><span class="h"># Today</span>\n\n<span class="todo">- [ ]</span> finish execution view pass\n<span class="done">- [x]</span> validate event ordering\n<span class="todo">- [ ]</span> send review notes\n\n<span class="h">## Notes</span>\n\nKeep the active work dominant.\nRaw evidence should remain reachable,\nnot compete with current state.\n\n<span class="dim">ref:</span> <span class="link">JYARD-241</span>\n\n_</div></div>
+    <div class="scratch-status"><span class="mode">NORMAL</span><span>markdown</span><span>utf-8</span><span class="pos">13:1</span></div>
+  </aside>
+</div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const initial = params.get('state') || 'base';
+  document.body.dataset.state = initial;
+  document.body.dataset.veil = params.get('veil') || 'same';
+  const launcher = document.querySelector('.launcher');
+  const input = document.querySelector('.launcher-search input');
+  function syncLauncherMode(){ launcher.classList.toggle('command-mode', input.value.trim().startsWith('>')); }
+  input.addEventListener('input', syncLauncherMode);
+  syncLauncherMode();
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') document.body.dataset.state = 'base';
+    if (e.key === '/') { e.preventDefault(); document.body.dataset.state = 'launcher'; input.focus(); input.select(); }
+    if (e.key.toLowerCase() === 'o' && !e.metaKey && !e.ctrlKey) document.body.dataset.state = 'overview';
+    if (e.metaKey && e.key.toLowerCase() === 's') { e.preventDefault(); document.body.dataset.state = document.body.dataset.state === 'scratch' ? 'base' : 'scratch'; }
+    if (document.body.dataset.state === 'overview' && e.key.toLowerCase() === 'v') document.body.dataset.veil = document.body.dataset.veil === 'strong' ? 'same' : 'strong';
+  });
+</script>
+</body>
+</html>
